@@ -1,0 +1,32 @@
+Software Requirements:
+Java 8
+
+Build instructions:
+
+1. You may skip this step if you have a recent version of gradle installed.
+   Otherwise,
+   On Linux or MacOS, please run
+   ./gradlew wrapper
+    OR
+    bash gradlew wrapper
+   On windows, always use gradlew.bat instead e.g.,
+   gradlew.bat wrapper
+
+2. Compiling and running tests
+   ./gradlew clean build
+   Alternatively, you can import the project in Intellij by importing build.gradle and running tests in the IDE.
+
+3. Running application as standalone:
+   First build a jar: 
+   ./gradlew jar
+   
+    You may now run the jar passing in the starting URL for the crawler:
+    java -jar build/libs/simple-sitemap-generator-1.0-SNAPSHOT.jar http://wiprodigital.com/   
+
+4. Troubleshooting
+   In case of any issues running gradle commands on your system, use the flag --debug to get more information. e.g.,  gradle --debug clean bulid
+
+   Alternatively, you may change the log level in logback.xml to DEBUG, the application will then log each
+   newly discovered link as soon as it is crawled successfully.
+
+
