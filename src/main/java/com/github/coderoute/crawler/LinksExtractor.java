@@ -1,5 +1,7 @@
 package com.github.coderoute.crawler;
 
+import com.github.coderoute.crawler.models.DownloadResult;
+import com.github.coderoute.crawler.models.Links;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;

@@ -1,5 +1,7 @@
 package com.github.coderoute.crawler;
 
+import com.github.coderoute.crawler.models.SiteMap;
+
 public class Main {
 
     public static void main(String[] args) {

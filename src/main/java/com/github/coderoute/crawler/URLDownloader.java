@@ -1,5 +1,6 @@
 package com.github.coderoute.crawler;
 
+import com.github.coderoute.crawler.models.DownloadResult;
 import org.apache.http.Header;
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;

@@ -1,5 +1,6 @@
 package com.github.coderoute.crawler
 
+import com.github.coderoute.crawler.models.Links
 import org.junit.Rule
 import spock.lang.Specification
 

@@ -1,5 +1,7 @@
 package com.github.coderoute.crawler;
 
+import com.github.coderoute.crawler.models.SiteMap;
+
 import java.util.Set;
 
 public class SiteMapPrinter {

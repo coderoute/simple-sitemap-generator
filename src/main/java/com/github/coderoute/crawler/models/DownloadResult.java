@@ -1,4 +1,4 @@
-package com.github.coderoute.crawler;
+package com.github.coderoute.crawler.models;
 
 import java.util.Optional;
 
@@ -17,7 +17,7 @@ public class DownloadResult {
         this.content = content;
     }
 
-    enum DownloadResultType {
+    public enum DownloadResultType {
         SUCCESS, INVALID_URI, ERROR
     }
 

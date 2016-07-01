@@ -1,5 +1,7 @@
 package com.github.coderoute.crawler;
 
+import com.github.coderoute.crawler.models.Links;
+import com.github.coderoute.crawler.models.SiteMap;
 import org.slf4j.Logger;
 
 import java.util.Set;

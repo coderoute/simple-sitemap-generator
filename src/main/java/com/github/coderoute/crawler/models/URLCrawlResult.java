@@ -1,4 +1,6 @@
-package com.github.coderoute.crawler;
+package com.github.coderoute.crawler.models;
+
+import com.github.coderoute.crawler.CrawlURLAction;
 
 import java.util.List;
 

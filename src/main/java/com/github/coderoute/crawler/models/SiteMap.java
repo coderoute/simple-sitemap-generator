@@ -1,4 +1,4 @@
-package com.github.coderoute.crawler;
+package com.github.coderoute.crawler.models;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;

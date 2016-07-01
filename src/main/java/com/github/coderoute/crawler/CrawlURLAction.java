@@ -1,5 +1,7 @@
 package com.github.coderoute.crawler;
 
+import com.github.coderoute.crawler.models.DownloadResult;
+import com.github.coderoute.crawler.models.URLCrawlResult;
 import com.google.common.annotations.VisibleForTesting;
 
 import java.util.concurrent.RecursiveAction;

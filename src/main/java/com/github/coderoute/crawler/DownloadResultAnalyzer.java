@@ -1,5 +1,9 @@
 package com.github.coderoute.crawler;
 
+import com.github.coderoute.crawler.models.DownloadResult;
+import com.github.coderoute.crawler.models.Links;
+import com.github.coderoute.crawler.models.URLCrawlResult;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
