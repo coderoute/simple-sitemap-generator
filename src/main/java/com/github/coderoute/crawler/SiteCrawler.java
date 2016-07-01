@@ -2,7 +2,6 @@ package com.github.coderoute.crawler;
 
 import org.slf4j.Logger;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.ForkJoinPool;
@@ -20,7 +19,7 @@ public class SiteCrawler {
 
     public SiteMap buildSiteMap(String baseUri, int numThreads) {
         ForkJoinPool forkJoinPool = new ForkJoinPool(numThreads);
-        ForkJoinTask<Void> forkJoinTask = forkJoinPool.submit(new URLCrawler(baseUri, this));
+        ForkJoinTask<Void> forkJoinTask = forkJoinPool.submit(new CrawlURLAction(baseUri, this));
         forkJoinTask.join();
         return sitemap;
     }

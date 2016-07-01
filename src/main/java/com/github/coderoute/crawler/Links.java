@@ -1,5 +1,8 @@
 package com.github.coderoute.crawler;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,5 +39,13 @@ public class Links {
 
     public static Links empty(String requestUrl) {
         return new Links(requestUrl, new HashSet<>(), new HashSet<>(), new HashSet<>());
+    }
+
+    @Override public boolean equals(Object other) {
+        return EqualsBuilder.reflectionEquals(this, other);
+    }
+
+    @Override public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 }

@@ -15,7 +15,9 @@ repositories {
 
 project.ext {
     versions = [
+            'cglib' : '3.1',
             'commonsIO' : '2.5',
+            'commonsLang3' : '3.4',
             'groovyAll' : '2.4.1',
             'guava' : '18.0',
             'httpclient': '4.5.2',
@@ -32,6 +34,9 @@ dependencies {
     compile group: 'org.jsoup', name: 'jsoup', version: "${versions.jsoup}"
     compile group: 'ch.qos.logback', name: 'logback-classic', version: "${versions.logback}"
     compile group: 'commons-io', name: 'commons-io', version: "${versions.commonsIO}"
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: "${versions.commonsLang3}"
+
+    testCompile group: 'cglib', name: 'cglib-nodep', version: "${versions.cglib}"
     testCompile group: 'org.codehaus.groovy', name:'groovy-all', version: "${versions.groovyAll}"
     testCompile group: 'com.github.tomakehurst', name: 'wiremock', version: "${versions.wiremock}"
     testCompile group: 'org.spockframework', name:'spock-core', version: "${versions.spock}"
