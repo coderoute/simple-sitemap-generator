@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
 
@@ -13,7 +14,7 @@ public class SiteCrawler {
 
     private static final Logger LOGGER = getLogger(SiteCrawler.class);
 
-    private final Set<String> linksCrawled = new HashSet<>();
+    private final Set<String> linksCrawled = new ConcurrentSkipListSet<>();
 
     private final SiteMap sitemap = new SiteMap();
 
