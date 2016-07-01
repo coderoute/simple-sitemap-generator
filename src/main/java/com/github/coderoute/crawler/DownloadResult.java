@@ -18,7 +18,7 @@ public class DownloadResult {
     }
 
     enum DownloadResultType {
-        SUCCESS, ERROR
+        SUCCESS, INVALID_URI, ERROR
     }
 
     public String content() {

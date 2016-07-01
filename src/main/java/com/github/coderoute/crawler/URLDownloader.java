@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Optional;
 
 import static org.slf4j.LoggerFactory.getLogger;
@@ -18,6 +19,16 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class URLDownloader {
 
     private static final Logger LOGGER = getLogger(URLDownloader.class);
+
+
+    public DownloadResult fetch(String requestUri) {
+        try {
+            return fetch(new URI(requestUri));
+        } catch (URISyntaxException e) {
+            LOGGER.warn("Got URISyntaxException for ["+requestUri+"]");
+            return new DownloadResult(requestUri, DownloadResult.DownloadResultType.INVALID_URI, Optional.empty(), "");
+        }
+    }
 
     public DownloadResult fetch(URI requestUri) {
         HttpGet httpGet = new HttpGet(requestUri);
