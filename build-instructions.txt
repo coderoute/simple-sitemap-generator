@@ -21,7 +21,7 @@ Build instructions:
    ./gradlew jar
    
     You may now run the jar passing in the starting URL for the crawler:
-    java -jar build/libs/simple-sitemap-generator-1.0-SNAPSHOT.jar http://wiprodigital.com/   
+    java -jar build/libs/simple-sitemap-generator-1.0-SNAPSHOT.jar http://example.org/   
 
 4. Troubleshooting
    In case of any issues running gradle commands on your system, use the flag --debug to get more information. e.g.,  gradle --debug clean bulid
