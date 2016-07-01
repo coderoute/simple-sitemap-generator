@@ -29,7 +29,7 @@ class CrawlURLActionTest extends Specification {
             def expectedLinks = new Links(url, internalLinksUrls, internalMediaURLs, externalLinks)
 
         when:
-            CrawlURLAction underTest = new CrawlURLAction(url, siteCrawler)
+            CrawlURLAction underTest = new CrawlURLAction(url, siteCrawler, 0)
             underTest.crawl()
 
         then:

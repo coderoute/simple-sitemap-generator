@@ -11,7 +11,7 @@ class URLDownloaderTest extends Specification {
     def "download URL for a syntactically incorrect URL results in ERROR"() {
 
         when:
-        DownloadResult downloadResult = underTest.fetch("http://www.example.org/some document.htm")
+        DownloadResult downloadResult = underTest.fetch("http://www.example.org/some document.htm", 0)
 
         then:
         downloadResult.downloadResultType == DownloadResult.DownloadResultType.INVALID_URI

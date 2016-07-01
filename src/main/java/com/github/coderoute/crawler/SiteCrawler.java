@@ -21,7 +21,7 @@ public class SiteCrawler {
 
     public SiteMap buildSiteMap(String baseUri, int numThreads) {
         ForkJoinPool forkJoinPool = new ForkJoinPool(numThreads);
-        ForkJoinTask<Void> forkJoinTask = forkJoinPool.submit(new CrawlURLAction(baseUri, this));
+        ForkJoinTask<Void> forkJoinTask = forkJoinPool.submit(new CrawlURLAction(baseUri, this, 0));
         forkJoinTask.join();
         return sitemap;
     }

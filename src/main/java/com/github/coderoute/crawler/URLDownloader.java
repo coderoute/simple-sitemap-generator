@@ -21,17 +21,16 @@ public class URLDownloader {
 
     private static final Logger LOGGER = getLogger(URLDownloader.class);
 
-
-    public DownloadResult fetch(String requestUri) {
+    public DownloadResult fetch(String requestUri, int tryCount) {
         try {
-            return fetch(new URI(requestUri));
+            return fetch(new URI(requestUri), tryCount);
         } catch (URISyntaxException e) {
             LOGGER.warn("Got URISyntaxException for ["+requestUri+"]");
-            return new DownloadResult(requestUri, DownloadResult.DownloadResultType.INVALID_URI, Optional.empty(), "");
+            return new DownloadResult(requestUri, tryCount, DownloadResult.DownloadResultType.INVALID_URI, Optional.empty(), "");
         }
     }
 
-    public DownloadResult fetch(URI requestUri) {
+    public DownloadResult fetch(URI requestUri, int tryCount) {
         HttpGet httpGet = new HttpGet(requestUri);
         String requestURL = requestUri.toString();
         try {
@@ -42,13 +41,13 @@ public class URLDownloader {
 
             if(HttpStatus.SC_OK == statusCode) {
                 String responseBody = EntityUtils.toString(httpResponse.getEntity());
-                return new DownloadResult(requestURL, DownloadResult.DownloadResultType.SUCCESS, contentType, responseBody);
+                return new DownloadResult(requestURL, tryCount, DownloadResult.DownloadResultType.SUCCESS, contentType, responseBody);
             } else {
-                return new DownloadResult(requestURL, DownloadResult.DownloadResultType.ERROR, contentType, "HTTP response status was: " + statusCode);
+                return new DownloadResult(requestURL, tryCount, DownloadResult.DownloadResultType.ERROR_RESPONSE, contentType, "HTTP response status was: " + statusCode);
             }
         } catch (IOException e) {
             LOGGER.error("Error fetching requestUri["+ requestURL +"] ", e);
-            return new DownloadResult(requestURL, DownloadResult.DownloadResultType.ERROR, Optional.empty(), e.toString());
+            return new DownloadResult(requestURL, tryCount, DownloadResult.DownloadResultType.IO_ERROR, Optional.empty(), e.toString());
         } finally {
             httpGet.releaseConnection();
         }

@@ -41,11 +41,13 @@ public class Links {
         return new Links(requestUrl, new HashSet<>(), new HashSet<>(), new HashSet<>());
     }
 
-    @Override public boolean equals(Object other) {
+    @Override
+    public boolean equals(Object other) {
         return EqualsBuilder.reflectionEquals(this, other);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 }
